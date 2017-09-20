@@ -59,4 +59,5 @@ if (simulationGuess === 'n' || simulationGuess === 'no') {
   alert('Whoa, cool! Thanks for the heads up ' + userName + '.');
 }
 
+// Nice goodbye
 alert(userName + '! That was so fun! I hope you enjoyed playing! Have a wonderful day!');

@@ -12,5 +12,7 @@ h1, p {
 img {
   width: 400px;
   height: auto;
-  text-align: center;
+  border: 15px solid white;
+  display: block;
+  margin: auto;
 }
