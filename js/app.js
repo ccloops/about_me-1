@@ -59,48 +59,58 @@ var userName = prompt('Hi there! My name is Lotus. What is your name?');
 //   alert('Whoa, cool! Thanks for the heads up ' + userName + '.');
 // }
 
-// Question Six - Dexterity Question (Number guessing game)
-alert('Ok ' + userName + '... now we are going to mix it up! In the next game, we\'ll roll a D20 to do a dexterity check on you. \n\nI\'ll roll the D20 behind the computer so you can\'t see. I need you to guess your level (random number between 1 and 20) in FOUR tries or less so we can win!! I know you can do it!');
-var userDexterityRoll = Math.floor(Math.random() * 20) + 1;
-console.log('#6 - Dexterity number guessing game. Number rolled is ' + userDexterityRoll);
-var tries = 3;
-while (true) {
-  var userGuessedRoll = Number(prompt(userName + ', what is your guess (between 1 - 20)? *fingers crossed*'));
-  console.log(userName + ' guessed ' + userGuessedRoll)
-  if (userGuessedRoll === userDexterityRoll) {
-    alert('OMG we did it! Thank you ' + userName + '!\nWe can now move on to the next game!!!');
-    console.log(userName + ' won the number game by correctly answering ' + userDexterityRoll);
-    break;
-  } else if (tries === 0) {
-      alert('Whomp whomp... better luck next time. Your dexterity is ' + userDexterityRoll + '. So close!');
-      break;
-  } else if (tries === 1 && userGuessedRoll > userDexterityRoll) {
-      alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too high! Please try again.. We only have one guess left!');
-      tries--;
-  } else if (tries === 1 && userGuessedRoll < userDexterityRoll) {
-      alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too low! Please try again.. We only have one guess left!');
-      tries--;
-  } else if (userGuessedRoll > userDexterityRoll) {
-      alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too high! Please try again.. We only have ' + tries + ' guess left!');
-      tries--;
-      }
-    else if (userGuessedRoll < userDexterityRoll) {
-      alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too low! Please try again.. We only have ' + tries + ' guess left!');
-      tries--;
-    }
-  }
+// // Question Six - Dexterity Question (Number guessing game)
+// alert('Ok ' + userName + '... now we are going to mix it up! In the next game, we\'ll roll a D20 to do a dexterity check on you. \n\nI\'ll roll the D20 behind the computer so you can\'t see. I need you to guess your level (random number between 1 and 20) in FOUR tries or less so we can win!! I know you can do it!');
+// var userDexterityRoll = Math.floor(Math.random() * 20) + 1;
+// console.log('#6 - Dexterity number guessing game. Number rolled is ' + userDexterityRoll);
+// var tries = 3;
+// while (true) {
+//   var userGuessedRoll = Number(prompt(userName + ', what is your guess (between 1 - 20)? *fingers crossed*'));
+//   console.log(userName + ' guessed ' + userGuessedRoll)
+//   if (userGuessedRoll === userDexterityRoll) {
+//     alert('OMG we did it! Thank you ' + userName + '!\nWe can now move on to the next game!!!');
+//     console.log(userName + ' won the number game by correctly answering ' + userDexterityRoll);
+//     break;
+//   } else if (tries === 0) {
+//       alert('Whomp whomp... better luck next time. Your dexterity is ' + userDexterityRoll + '. So close!');
+//       break;
+//   } else if (tries === 1 && userGuessedRoll > userDexterityRoll) {
+//       alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too high! Please try again.. We only have one guess left!');
+//       tries--;
+//   } else if (tries === 1 && userGuessedRoll < userDexterityRoll) {
+//       alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too low! Please try again.. We only have one guess left!');
+//       tries--;
+//   } else if (userGuessedRoll > userDexterityRoll) {
+//       alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too high! Please try again.. We only have ' + tries + ' guess left!');
+//       tries--;
+//       }
+//     else if (userGuessedRoll < userDexterityRoll) {
+//       alert('Oh no! ' + userName + ', ' + userGuessedRoll + ' is too low! Please try again.. We only have ' + tries + ' guess left!');
+//       tries--;
+//     }
+//   }
 
   // As a developer, I want to add a seventh question to my guessing game that has multiple possible correct answers that are stored in an array. For instance, "Can you guess a state that I have lived in besides Washington?", so that even more of my programming skills are showcased. For now, I will structure this question so that the user has six tries to get a single correct answer, and upon using up those tries OR getting a correct answer, displays a message to the user indicating all of the possible correct answers.
 // As a developer, I want to keep a tally of the total number of correct answers given by the user, and at the end of the game, tell the user how well they did with a personalized custom message that includes the number of correct answers and also addresses the user by name, e.g. "You got 4 out of 7 questions correct, Bobbi! Better luck next time."
 
-var lotusFaveAnimals = ['narwhal', 'penguin', 'sloth', 'owl', 'mouse', 'orca', 'dolphin', 'dragon', 'fox', 'snail']
+// // Question Seven - Lotus' favorite animals guessing game
 
+//Current data on favorite animals
+var lotusFaveAnimals = ['narwhal', 'penguin', 'sloth', 'owl', 'mouse', 'orca', 'dolphin', 'dragon', 'fox', 'snail'];
 console.log('#7 - Favorite animal guessing game. Lotus has a total of ' + lotusFaveAnimals.length + ' animals. This list contains the following animals: ');
 for (var i = 0; i < lotusFaveAnimals.length; i++) {
   console.log(lotusFaveAnimals[i] + ' ');
 }
 
-alert('Alright next game!\n\nLotus is a huge animal lover. All of the animals! I need you to guess an animal that is on her favorites list in six gueses or less. Currently, Lotus has a total of ' + lotusFaveAnimals.length + ' SUPER favorites.\n\nWe just need to get one correct but BONUS POINTS for getting more than one!!!');
+alert('Alright next game!\n\nLotus is a huge animal lover. I need you to guess an animal that is on her favorites list in six gueses or less.\n\nCurrently, Lotus has a total of ' + lotusFaveAnimals.length + ' SUPER favorites.\n\nWe just need to get one correct -- BONUS POINTS for getting more than one!!!\n\nLet\'s start!');
+
+var animalGuessCount = 6
+var faveAnimalPoints = 0
+for (animalGuessCount; animalGuessCount > 0; animalGuessCount--) {
+  var userAnimalGuess = prompt('Please take a guess at one of Lotus\'s favorite animals.\n\nWe currently have ' + animalGuessCount + ' guesses and ' + faveAnimalPoints + ' points!');
+
+}
+
 
 
 // alert(userGuessedRoll);
