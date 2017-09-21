@@ -93,15 +93,14 @@ while (true) {
   // As a developer, I want to add a seventh question to my guessing game that has multiple possible correct answers that are stored in an array. For instance, "Can you guess a state that I have lived in besides Washington?", so that even more of my programming skills are showcased. For now, I will structure this question so that the user has six tries to get a single correct answer, and upon using up those tries OR getting a correct answer, displays a message to the user indicating all of the possible correct answers.
 // As a developer, I want to keep a tally of the total number of correct answers given by the user, and at the end of the game, tell the user how well they did with a personalized custom message that includes the number of correct answers and also addresses the user by name, e.g. "You got 4 out of 7 questions correct, Bobbi! Better luck next time."
 
-var lotusFaveAnimals = ['narwhal', 'penguin', 'sloth', 'owl', 'mouse', 'orca', 'dolphin', 'dragon']
+var lotusFaveAnimals = ['narwhal', 'penguin', 'sloth', 'owl', 'mouse', 'orca', 'dolphin', 'dragon', 'fox', 'snail']
 
-for (i = 0; i < lotusFaveAnimals.legth; i++) {
+console.log('#7 - Favorite animal guessing game. Lotus has a total of ' + lotusFaveAnimals.length + ' animals. This list contains the following animals: ');
+for (var i = 0; i < lotusFaveAnimals.length; i++) {
   console.log(lotusFaveAnimals[i] + ' ');
 }
 
-var faveAnimalListFormat =
-console.log('Lotus has a total of ' + lotusFaveAnimals.length + ' animals. This list contains: ' + lotusFaveAnimals)
-alert('Alright next game!\n\nLotus is a huge animal lover. All of the animals! I need you to guess an animal that is on her favorites list in six gueses or less. Currently, Lotus has a total of ' + lotusFaveAnimals.length + ' favorites.\n\nWe just need to get one correct but BONUS POINTS for getting more than one!!!');
+alert('Alright next game!\n\nLotus is a huge animal lover. All of the animals! I need you to guess an animal that is on her favorites list in six gueses or less. Currently, Lotus has a total of ' + lotusFaveAnimals.length + ' SUPER favorites.\n\nWe just need to get one correct but BONUS POINTS for getting more than one!!!');
 
 
 // alert(userGuessedRoll);
