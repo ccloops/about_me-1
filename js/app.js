@@ -107,14 +107,14 @@ alert('Alright next game!\n\nLotus is a huge animal lover. I need you to guess a
 var animalGuessCount;
 var faveAnimalPoints = 0
 var faveAnimalFromList;
+var correctAnswers = 0
 for (animalGuessCount = 6; animalGuessCount > 0; animalGuessCount--) {
   var userAnimalGuess = prompt('Please take a guess at one of Lotus\'s favorite animals.\n\nWe currently have ' + animalGuessCount + ' guesses and ' + faveAnimalPoints + ' points!');
-  for(var j = 0; j < lotusFaveAnimals.length; j++) {
-    if (userAnimalGuess === lotusFaveAnimals[j]) {
-      alert('Wow ' + userName '! You got one!\n\nYou have ' + correctAnswers + ' out of ' + lotusFaveAnimals.length + '!');
+    if (userAnimalGuess === lotusFaveAnimals[1]) {
+      alert('Wow ' + userName + '! You got one!\n\nYou have ' + correctAnswers.toString() + ' out of ' + lotusFaveAnimals.length.toString() + '!');
     }
   }
-}
+
 
 
 

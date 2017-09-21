@@ -1,12 +1,17 @@
+
+
 body {
   background-color: black;
 }
 
 h1, p {
-  color: pink;
-  font-family: monospace;
   font-size: 50px;
   text-align: center;
+}
+
+h1, p, ul li {
+  color: pink;
+  font-family: monospace;
 }
 
 img {
@@ -14,4 +19,8 @@ img {
   border: 15px solid white;
   display: block;
   margin: auto;
+}
+
+ul {
+  margin-left: 100px;
 }
