@@ -72,7 +72,7 @@ while (true) {
   } else if (tries === 0) {
       alert('Whomp whomp... better luck next time. Your dexterity is ' + userDexterityRoll + '. So close!');
       break;
-  } else if (tries === 1 && userGuessedRoll > userDexterityRoll) {
+  } else if (tries === 1) {
       alert('Oh no! ' + userGuessedRoll + ' ! Please try again.. We only have one guess left!');
       tries--;
     } else {
