@@ -20,14 +20,17 @@ function tromboneQuestion() {
 tromboneQuestion();
 
 // Question Two - Person Question
-var personNameGuess = prompt('Question 2: Lotus has a person named Ducky. y/n').toLowerCase();
-console.log('#2 - Person question answer is "n" or "no". ' + userName + ' entered ' + personNameGuess);
-// Dog question responses to user
-if (personNameGuess === 'no' || personNameGuess === 'n') {
-  alert('Ah, yes! Good job, ' + userName + '! Lotus\'s person is named Birdie.');
-} else {
-  alert('So close, ' + userName + '! Lotus\'s person is named after a different animal. The birdie.');
+function personQuestion() {
+  var personNameGuess = prompt('Question 2: Lotus has a person named Ducky. y/n').toLowerCase();
+  console.log('#2 - Person question answer is "n" or "no". ' + userName + ' entered ' + personNameGuess);
+  // Dog question responses to user
+  if (personNameGuess === 'no' || personNameGuess === 'n') {
+    alert('Ah, yes! Good job, ' + userName + '! Lotus\'s person is named Birdie.');
+  } else {
+    alert('So close, ' + userName + '! Lotus\'s person is named after a different animal. The birdie.');
+  }
 }
+personQuestion();
 
 // Question Three - Flight Question
 var flightGuess = prompt('Question 3: Lotus can really fly? y/n').toLowerCase();
