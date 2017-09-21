@@ -33,37 +33,46 @@ function personQuestion() {
 personQuestion();
 
 // Question Three - Flight Question
-var flightGuess = prompt('Question 3: Lotus can really fly? y/n').toLowerCase();
-console.log('#3 - Flight question answer is "y" or "yes". ' + userName + ' entered ' + flightGuess);
-// Flight question responses to user
-if (flightGuess === 'y' || flightGuess === 'yes') {
-  alert('Correct! Why not?!');
-} else if (flightGuess === 'maybe') {
-  alert('Heh exactly!');
+function flightQuestion() {
+  var flightGuess = prompt('Question 3: Lotus can really fly? y/n').toLowerCase();
+  console.log('#3 - Flight question answer is "y" or "yes". ' + userName + ' entered ' + flightGuess);
+  // Flight question responses to user
+  if (flightGuess === 'y' || flightGuess === 'yes') {
+    alert('Correct! Why not?!');
+  } else if (flightGuess === 'maybe') {
+    alert('Heh exactly!');
+  }
+  else {
+    alert('Sorry, wrong answer ' + userName + '. Lotus can indeed fly.');
+  }
 }
-else {
-  alert('Sorry, wrong answer ' + userName + '. Lotus can indeed fly.');
-}
+flightQuestion();
 
 // Question Four - Unicorn Question
-var unicornGuess = prompt('Question 4: Lotus is part unicorn? y/n').toLowerCase();
-console.log('#4 - Unicorn question answer is "n" or "n". ' + userName + ' entered ' + flightGuess);
-// Unicorn question responses to user
-if (unicornGuess === 'y' || unicornGuess === 'yes') {
-  alert('Incorrect. Lotus is not part unicorn. But maybe... It was a good guess, ' + userName + '.');
-} else {
-  alert('Yeah, you are right ' + userName + '. It would be cool, though!');
+function unicornQuestion() {
+  var unicornGuess = prompt('Question 4: Lotus is part unicorn? y/n').toLowerCase();
+  console.log('#4 - Unicorn question answer is "n" or "n". ' + userName + ' entered ' + unicornGuess);
+  // Unicorn question responses to user
+  if (unicornGuess === 'y' || unicornGuess === 'yes') {
+    alert('Incorrect. Lotus is not part unicorn. But maybe... It was a good guess, ' + userName + '.');
+  } else {
+    alert('Yeah, you are right ' + userName + '. It would be cool, though!');
+  }
 }
+unicornQuestion();
 
 // Question Five - Simulation Question
-var simulationGuess = prompt('Question 5: We are all living in a simulation? y/n').toLowerCase();
-console.log('#5 - Simulation question answer is "y" or "yes". ' + userName + ' entered ' + simulationGuess);
-// Simulation question responses to user
-if (simulationGuess === 'n' || simulationGuess === 'no') {
-  alert('Hmmmm... ' + userName + '. I have no idea but it is very interesting that you think not.');
-} else {
-  alert('Whoa, cool! Thanks for the heads up ' + userName + '.');
+function simulationQuestion() {
+  var simulationGuess = prompt('Question 5: We are all living in a simulation? y/n').toLowerCase();
+  console.log('#5 - Simulation question answer is "y" or "yes". ' + userName + ' entered ' + simulationGuess);
+  // Simulation question responses to user
+  if (simulationGuess === 'n' || simulationGuess === 'no') {
+    alert('Hmmmm... ' + userName + '. I have no idea but it is very interesting that you think not.');
+  } else {
+    alert('Whoa, cool! Thanks for the heads up ' + userName + '.');
+  }
 }
+simulationQuestion();
 
 // Question Six - Dexterity Question (Number guessing game)
 alert('Ok ' + userName + '... now we are going to mix it up! In the next game, we\'ll roll a D20 to do a dexterity check on you. \n\nI\'ll roll the D20 behind the computer so you can\'t see. I need you to guess your level (random number between 1 and 20) in FOUR tries or less so we can win!! I know you can do it!');
