@@ -60,7 +60,7 @@ if (simulationGuess === 'n' || simulationGuess === 'no') {
 }
 
 // Question Six - Dexterity Question (Number guessing game)
-alert('Ok ' + userName + '... now we are going to mix it up! In the next game, we\'ll roll a D20 to do a dexterity check on you. \n\nI\'ll roll the D20 behind the computer so you can\'t see. I need you to guess level (random number between 1 and 20) in FOUR tries or less so we can win!! I know you can do it!');
+alert('Ok ' + userName + '... now we are going to mix it up! In the next game, we\'ll roll a D20 to do a dexterity check on you. \n\nI\'ll roll the D20 behind the computer so you can\'t see. I need you to guess your level (random number between 1 and 20) in FOUR tries or less so we can win!! I know you can do it!');
 var userDexterityRoll = Math.floor(Math.random() * 20) + 1;
 console.log('#6 - Dexterity number guessing game. Number rolled is ' + userDexterityRoll);
 var tries = 3;
@@ -72,13 +72,20 @@ while (true) {
   } else if (tries === 0) {
       alert('Whomp whomp... better luck next time. Your dexterity is ' + userDexterityRoll + '. So close!');
       break;
-  } else if (tries === 1) {
-      alert('Oh no! ' + userGuessedRoll + ' ! Please try again.. We only have one guess left!');
+  } else if (tries === 1 && userGuessedRoll > userDexterityRoll) {
+      alert('Oh no! ' + userGuessedRoll + '! ' + userGuessedRoll + ' is too high! Please try again.. We only have one guess left!');
       tries--;
-    } else {
-        alert('Oh no! That is not it! Please try again.. We only have ' + tries + ' guesses left!');
-        tries--;
+  } else if (tries === 1 && userGuessedRoll < userDexterityRoll) {
+      alert('Oh no! ' + userGuessedRoll + '! ' + userGuessedRoll + ' is too low! Please try again.. We only have one guess left!');
+      tries--;
+  } else if (userGuessedRoll > userDexterityRoll) {
+      alert('Oh no! ' + userName + '! ' + userGuessedRoll + ' is too high! Please try again.. We only have ' + tries + ' guess left!');
+      tries--;
       }
+    else if (userGuessedRoll < userDexterityRoll) {
+      alert('Oh no! ' + userName + '! ' + userGuessedRoll + ' is too low! Please try again.. We only have ' + tries + ' guess left!');
+      tries--;
+    }
   }
 
 
