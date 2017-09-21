@@ -104,11 +104,16 @@ for (var i = 0; i < lotusFaveAnimals.length; i++) {
 
 alert('Alright next game!\n\nLotus is a huge animal lover. I need you to guess an animal that is on her favorites list in six gueses or less.\n\nCurrently, Lotus has a total of ' + lotusFaveAnimals.length + ' SUPER favorites.\n\nWe just need to get one correct -- BONUS POINTS for getting more than one!!!\n\nLet\'s start!');
 
-var animalGuessCount = 6
+var animalGuessCount;
 var faveAnimalPoints = 0
-for (animalGuessCount; animalGuessCount > 0; animalGuessCount--) {
+var faveAnimalFromList;
+for (animalGuessCount = 6; animalGuessCount > 0; animalGuessCount--) {
   var userAnimalGuess = prompt('Please take a guess at one of Lotus\'s favorite animals.\n\nWe currently have ' + animalGuessCount + ' guesses and ' + faveAnimalPoints + ' points!');
-
+  for(var j = 0; j < lotusFaveAnimals.length; j++) {
+    if (userAnimalGuess === lotusFaveAnimals[j]) {
+      alert('Wow ' + userName '! You got one!\n\nYou have ' + correctAnswers + ' out of ' + lotusFaveAnimals.length + '!');
+    }
+  }
 }
 
 
