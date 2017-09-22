@@ -1,10 +1,11 @@
 'use strict';
 
+var score = 0;
 // Begin the game!!!
 
 var userName = prompt('Hi there! My name is Lotus. What is your name?');
 
-alert('Hi, ' + userName + '! Let\'s play a series of guessing games! For the next five questions please guess YES or NO....');
+alert('Hi, ' + userName + '! Let\'s play a series of guessing games! Try your best, you will be scored! For the next five questions please guess YES or NO....');
 
 // Question One - Trombone Question
 function tromboneQuestion() {
@@ -13,6 +14,7 @@ function tromboneQuestion() {
   // Trombone question responses to user
   if (tromboneGuess === 'n' || tromboneGuess === 'no') {
     alert('You are correct! Lotus can\'t play the trombone although she (sort of) can play the clarinet.');
+    score++;
   } else {
     alert('You are incorrect. Lotus is honored that you think so but unfortunately she does not play the trombone.');
   }
@@ -26,6 +28,7 @@ function personQuestion() {
   // Dog question responses to user
   if (personNameGuess === 'no' || personNameGuess === 'n') {
     alert('Ah, yes! Good job, ' + userName + '! Lotus\'s person is named Birdie.');
+    score++;
   } else {
     alert('So close, ' + userName + '! Lotus\'s person is named after a different animal. The birdie.');
   }
@@ -39,6 +42,7 @@ function flightQuestion() {
   // Flight question responses to user
   if (flightGuess === 'y' || flightGuess === 'yes') {
     alert('Correct! Why not?!');
+    score++;
   } else if (flightGuess === 'maybe') {
     alert('Heh exactly!');
   }
@@ -57,6 +61,7 @@ function unicornQuestion() {
     alert('Incorrect. Lotus is not part unicorn. But maybe... It was a good guess, ' + userName + '.');
   } else {
     alert('Yeah, you are right ' + userName + '. It would be cool, though!');
+    score++;
   }
 }
 unicornQuestion();
@@ -70,6 +75,7 @@ function simulationQuestion() {
     alert('Hmmmm... ' + userName + '. I have no idea but it is very interesting that you think not.');
   } else {
     alert('Whoa, cool! Thanks for the heads up ' + userName + '.');
+    score++;
   }
 }
 simulationQuestion();
@@ -86,6 +92,7 @@ function dexterityQuestion() {
     if (userGuessedRoll === userDexterityRoll) {
       alert('OMG we did it! Thank you ' + userName + '!\nWe can now move on to the next game!!!');
       console.log(userName + ' won the number game by correctly answering ' + userDexterityRoll);
+      score++;
       break;
     } else if (tries === 0) {
       alert('Whomp whomp... better luck next time. Your dexterity is ' + userDexterityRoll + '. So close!');
@@ -113,16 +120,34 @@ dexterityQuestion();
 // // Question Seven - Lotus' favorite animals guessing game
 function favoriteAnimals() {
   //Current data on favorite animals
+  var animalGuessesRemaining = 6;
+
   var lotusFaveAnimals = ['narwhal', 'penguin', 'sloth', 'owl', 'mouse', 'orca', 'dolphin', 'dragon', 'fox', 'snail'];
   console.log('#7 - Favorite animal guessing game. Lotus has a total of ' + lotusFaveAnimals.length + ' animals. This list contains the following animals: ');
-  for (var i = 0; i < lotusFaveAnimals.length; i++) {
-    console.log(lotusFaveAnimals[i] + ' ');
-  }
 
   alert('Alright next game!\n\nLotus is a huge animal lover. I need you to guess an animal that is on her favorites list in six gueses or less.\n\nCurrently, Lotus has a total of ' + lotusFaveAnimals.length + ' SUPER favorites!\n\nLet\'s start!');
 
-  // As a developer, I want to add a seventh question to my guessing game that has multiple possible correct answers that are stored in an array. For instance, "Can you guess a state that I have lived in besides Washington?", so that even more of my programming skills are showcased. For now, I will structure this question so that the user has six tries to get a single correct answer, and upon using up those tries OR getting a correct answer, displays a message to the user indicating all of the possible correct answers.
-  // As a developer, I want to keep a tally of the total number of correct answers given by the user, and at the end of the game, tell the user how well they did with a personalized custom message that includes the number of correct answers and also addresses the user by name, e.g. "You got 4 out of 7 questions correct, Bobbi! Better luck next time."
+  while(animalGuessesRemaining > 0) {
+
+    var userAnimalGuess = prompt('Ok, guess an animal');
+    animalGuessesRemaining--;
+
+    for (var i = 0; i < lotusFaveAnimals.length; i++) {
+      // console.log(lotusFaveAnimals[i] + ' ');
+      if(userAnimalGuess === lotusFaveAnimals[i]) {
+        alert('Hurray! You did it! Yes, ' + userAnimalGuess + ' is in the list of favorite animals\n\nThe complete list is ' + lotusFaveAnimals);
+        animalGuessesRemaining = -1;
+        score++;
+        break;
+      }
+    }
+    if(animalGuessesRemaining > 0) {
+      alert('Not quite right! It\'s okay, you still have ' + animalGuessesRemaining + ' left.');
+    }
+    if(animalGuessesRemaining === 0) {
+      alert('Sorry, no more guesses - you lose! The correct answers are: narwhal, penguin, sloth, owl, mouse, orca, dolphin, fox, or snail.');
+    }
+  }
 
   // psuedo code - Can you guess Lotus' one of lotus' favorite animals
   // Lotus has list of animals
@@ -131,15 +156,13 @@ function favoriteAnimals() {
   // if correct then end and displays
   // if incorrect lose guess
 
-  var userAnimalGuess = prompt('Ok, guess an animal');
-
-  for (var j = 0; j < lotusFaveAnimals; j++) {
-    if (userAnimalGuess === lotusFaveAnimals[j]) {
-      alert('Hurray! You did it! Yes, ' + userAnimalGuess + ' is in the list of favorite animals\n\nThe complete list is ');
-    } else {
-      continue;
-    }
-  }
+  // for (var j = 0; j < lotusFaveAnimals; j++) {
+  //   if (userAnimalGuess === lotusFaveAnimals[j]) {
+  //     alert('Hurray! You did it! Yes, ' + userAnimalGuess + ' is in the list of favorite animals\n\nThe complete list is ');
+  //   } else {
+  //     continue;
+  //   }
+  // }
   // var animalGuessCount;
   // var faveAnimalPoints = 0
   // var faveAnimalFromList;
@@ -154,11 +177,17 @@ function favoriteAnimals() {
   // while (animalGuessCount > 0 || correctAnswers === 1) {
   //
   // }
+  // alert(userGuessedRoll);
 }
 favoriteAnimals();
 
+//Score
+if(score > 5) {
+  alert('You got enough points to be a champion! Congratulations!');
+} else {
+  alert('Sorry you didn\'t get enough points. You lose.');
+}
 
-// alert(userGuessedRoll);
 
 // Nice goodbye
 alert(userName + '! That was so fun! I hope you enjoyed playing! Have a wonderful day!');
